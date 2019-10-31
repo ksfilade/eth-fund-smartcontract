@@ -6,7 +6,7 @@ contract Inbox {
     constructor (string initialMessage) public {
         message = initialMessage;
     }
-    function setMessage(string newMessage) public {
-        message = newMessage;
+    function send(address fundAddress) public payable {
+        fundAddress.transfer(msg.value);
     }
 }
